@@ -16,4 +16,4 @@ def timer_trigger(myTimer: func.TimerRequest) -> None:
 
     # Get the current UTC time and convert it to Berlin time
     berlin_time = dt.datetime.now(pytz.utc).astimezone(BERLIN_TZ)
-    logging.info(f'Python timer trigger function executed, at this time: {berlin_time}') 
+    logging.info(f'OK HERE WE GO>Python timer trigger function executed, at this time: {berlin_time}') 
