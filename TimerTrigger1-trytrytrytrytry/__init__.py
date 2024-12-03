@@ -7,6 +7,9 @@ import azure.functions as func
 
 def main(mytimer: func.TimerRequest) -> None:
     # Define the Berlin timezone
+    logging.info('Berlin timezone: %s', pytz.timezone('Europe/Berlin'))
+
+    
     berlin_tz = pytz.timezone('Europe/Berlin')
 
     # Get the current UTC time and convert it to Berlin time
