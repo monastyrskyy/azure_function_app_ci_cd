@@ -1,20 +1,14 @@
 import datetime
 import logging
-import pytz  # You need to install the pytz library
 
 import azure.functions as func
 
 
 def main(mytimer: func.TimerRequest) -> None:
-    # Define the Berlin timezone
-    logging.info('Berlin timezone: %s', pytz.timezone('Europe/Berlin'))
-
-    
-    berlin_tz = pytz.timezone('Europe/Berlin')
-
-    # Get the current UTC time and convert it to Berlin time
     utc_timestamp = datetime.datetime.utcnow().replace(
-        tzinfo=datetime.timezone.utc)
-    berlin_timestamp = utc_timestamp.astimezone(berlin_tz).isoformat()
+        tzinfo=datetime.timezone.utc).isoformat()
 
-    logging.info('WWWWWWWWWOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO!!!!!!!!!!!!!!! Python timer trigger function ran at %s (Berlin time)', berlin_timestamp)
+    if mytimer.past_due:
+        logging.info('The timer is past due!')
+
+    logging.info('WWWWWWWWWOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO!!!!!!!!!!!!!!! Python timer trigger function ran at %s', utc_timestamp)
