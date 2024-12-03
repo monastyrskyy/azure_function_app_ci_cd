@@ -70,4 +70,3 @@ jobs:
           slot-name: 'development'
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_AE64604BDB5F4BD8B8B66ADBB54F0EF0 }}
-          publish-method: 'webapp'
