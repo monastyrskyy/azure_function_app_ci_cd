@@ -14,4 +14,4 @@ def main(mytimer: func.TimerRequest) -> None:
         tzinfo=datetime.timezone.utc)
     berlin_timestamp = utc_timestamp.astimezone(berlin_tz).isoformat()
 
-    logging.info('WWWWWWWWWOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO!!!!!!!!!!!!!!! Python timer trigger function ran at %s (Berlin time)', berlin_timestamp)
+    logging.info('WWWWWWWWWOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO!!!!!!!!!!!!!!! Python timer trigger function ran at %s (Berlin time)', berlin_timestamp)
